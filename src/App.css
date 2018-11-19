@@ -1,0 +1,17 @@
+/* * {
+  border: 1px solid red;
+} */
+
+.App {
+  width: 100%;
+}
+
+.slider {
+  width: 100%;
+}
+
+.bg-img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
