@@ -10,8 +10,39 @@
   width: 100%;
 }
 
+.slide {
+  position: relative;
+}
+
 .bg-img {
   max-width: 100%;
   display: block;
   height: auto;
+}
+
+.text {
+  position: absolute;
+  bottom: 20%;
+  left: 25%;
+  width: 40%;
+  font-size: 5vw;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.menu {
+  position: fixed;
+  right: 10px;
+  top: 20vw;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.menuBar {
+  background-color: white;
+  width: 40px;
+  height: 3px;
+  margin: 10px;
 }
