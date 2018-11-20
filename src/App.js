@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Slider from './slider';
+import Slider from './components/slider';
 
 class App extends Component {
   render() {
