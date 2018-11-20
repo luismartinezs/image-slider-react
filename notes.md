@@ -12,7 +12,10 @@ Static
 - Menu should be within slider view OK
 
 - if viewport width/height ratio > 16:9, slide should fill full width OK
-- menu should adjust size depending on viewport size
+- menu should adjust size depending on viewport size OK
+
+- function that makes slide fade out (opacity 0.0)
+- function that makes slide fade in (opacity from 0.0 to 1.0)
 
 
 Behavior:
