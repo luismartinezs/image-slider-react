@@ -5,7 +5,7 @@ import Menu from './menu';
 export default class Slider extends Component {
     render() {
         return (
-            <div>
+            <div className='slider'>
                 <Menu />
                 <Slide />
             </div>
