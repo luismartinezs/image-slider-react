@@ -11,6 +11,12 @@ Static
 - when user clicks menu line, slide shows corresponding image OK
 - Menu should be within slider view OK
 
+- if viewport width/height ratio > 16:9, slide should fill full width OK
+- menu should adjust size depending on viewport size
+
+
+Behavior:
+
 - if view width > 1200px
     user can't scroll, image fills full height of window always, images are not displayed sucessively:
     if viewport width/height > 19:6
