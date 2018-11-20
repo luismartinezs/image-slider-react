@@ -1,13 +1,44 @@
 import React, { Component } from 'react';
 import Slide from './slide';
 import Menu from './menu';
+import imgArray from '../assets/data';
+
+console.log(imgArray);
 
 export default class Slider extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            currentImg: imgArray[1],
+        };
+        this.handleMenuClick = this.handleMenuClick.bind(this);
+    }
+
+    componentDidMount() {
+        document.addEventListener('click', this.handleMenuClick);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('click', this.handleMenuClick);
+    }
+
+    handleMenuClick(event) {
+        if (event.target.dataset.menu !== undefined) {
+            let menuIndex = event.target.dataset.index
+            this.toggleImg(menuIndex);
+        }
+    }
+
+    toggleImg(imgIndex) {
+
+    }
+
     render() {
+        console.log('current image: '+this.state.currentImg.url);
         return (
             <div className='slider'>
                 <Menu />
-                <Slide />
+                <Slide currentImg={this.state.currentImg}/>
             </div>
         );
     }
