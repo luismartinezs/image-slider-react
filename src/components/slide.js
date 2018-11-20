@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Slide = () => {
-    return (
-        <div className='slide'>
-            <img className='bg-img' src='http://bloquo.cc/img/works/1.jpg' alt='image1'/>
-            <h2 className='text'>Lorem ipsum dolor sit amet</h2>
-        </div>
-    );
+export default class Slide extends React.Component {
+    render() {
+        return (
+            <div className='slide'>
+                <img className='bg-img' src={this.props.currentImg.url} alt={this.props.currentImg.alt}/>
+                <h2 className='text'>{this.props.currentImg.text}</h2>
+            </div>
+        );
+    }
 }
-
-export default Slide;

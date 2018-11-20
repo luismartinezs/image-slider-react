@@ -8,6 +8,9 @@ Static
 - user can see a text inside the image OK
 - user can see a series of horizontal lines to the right OK
 
+- when user clicks menu line, slide shows corresponding image OK
+- Menu should be within slider view OK
+
 - if view width > 1200px
     user can't scroll, image fills full height of window always, images are not displayed sucessively:
     if viewport width/height > 19:6

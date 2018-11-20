@@ -3,13 +3,11 @@ import Slide from './slide';
 import Menu from './menu';
 import imgArray from '../assets/data';
 
-console.log(imgArray);
-
 export default class Slider extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentImg: imgArray[1],
+            currentImg: imgArray[0],
         };
         this.handleMenuClick = this.handleMenuClick.bind(this);
     }
@@ -25,12 +23,10 @@ export default class Slider extends Component {
     handleMenuClick(event) {
         if (event.target.dataset.menu !== undefined) {
             let menuIndex = event.target.dataset.index
-            this.toggleImg(menuIndex);
+            this.setState({
+                currentImg: imgArray[menuIndex],
+            })
         }
-    }
-
-    toggleImg(imgIndex) {
-
     }
 
     render() {
