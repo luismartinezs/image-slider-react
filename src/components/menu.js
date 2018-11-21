@@ -1,3 +1,5 @@
+'use static'
+
 import React, { Component } from 'react';
 
 export default class Menu extends Component {
@@ -12,9 +14,9 @@ export default class Menu extends Component {
             return (<div key={index} className={style} data-menu data-index={index}>
                 <div className='menuItem' data-menu data-index={index}></div>
             </div>);
-            });
+        });
 
-            return (
+        return (
             <div className='menu'>
                 {menuItems}
             </div>

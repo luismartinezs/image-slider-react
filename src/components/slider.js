@@ -1,3 +1,5 @@
+'use static'
+
 import React, { Component } from 'react';
 import Slide from './slide';
 import Menu from './menu';
@@ -42,40 +44,43 @@ export default class Slider extends Component {
 
         let _this = this;
 
-        setTimeout( (index) => {
+        // If you don't want the slider to rotate automatically, comment from this line
+        setTimeout((index) => {
             index++;
             if (index > 4) index = 0;
             _this.changeSlide(index);
             _this.rotateSlide();
         }, 5000, _this.state.currentImg.indexOf('visible'));
-        
+        // Until this line
+
     }
 
     changeSlide(index) {
         let currentImgState = this.state.currentImg;
 
-            this.setState(() => {
-                for (let i=0; i < currentImgState.length; i++) {
-                    currentImgState[i] = 'invisible';
-                    if ( i === +index ) {
-                        currentImgState[i] = 'visible';
-                    }
+        this.setState(() => {
+            for (let i = 0; i < currentImgState.length; i++) {
+                currentImgState[i] = 'invisible';
+                if (i === +index) {
+                    currentImgState[i] = 'visible';
                 }
-                return {
-                    currentImg: currentImgState,
-                };
-            });
+            }
+            return {
+                currentImg: currentImgState,
+            };
+        });
     }
 
     render() {
+
+        let slides = [0, 1, 2, 3, 4].map((index) => {
+            return (<Slide className={this.state.currentImg[index]} currentImg={imgArray[index]} data-slide-index={index} />);
+        });
+
         return (
             <div className='slider'>
                 <Menu currentImg={this.state.currentImg} />
-                <Slide className={this.state.currentImg[0]} currentImg={imgArray[0]} data-slide-index='0' />
-                <Slide className={this.state.currentImg[1]} currentImg={imgArray[1]} data-slide-index='1' />
-                <Slide className={this.state.currentImg[2]} currentImg={imgArray[2]} data-slide-index='2' />
-                <Slide className={this.state.currentImg[3]} currentImg={imgArray[3]}  data-slide-index='3' />
-                <Slide className={this.state.currentImg[4]} currentImg={imgArray[4]}  data-slide-index='4' />
+                {slides};
             </div>
         );
     }

@@ -1,3 +1,5 @@
+/* Slider */
+
 .slider {
     --white-clr: rgb(233, 233, 233);
     width: 100%;
@@ -5,34 +7,40 @@
     position: relative;
     overflow: hidden;
     color: var(--white-clr);
-  }
-  
-  .slide {
+}
+
+/* Slide */
+
+.slide {
     position: absolute;
     width: 100%;
     height: 100%;
-  }
-  
-  .visible {
+}
+
+.visible {
     opacity: 1.0;
     -webkit-transition: opacity 500ms 300ms;
     transition: opacity 500ms 300ms;
-  }
-  
-  .invisible {
+}
+
+.invisible {
     opacity: 0.0;
     -webkit-transition: opacity 500ms 0ms;
     transition: opacity 500ms 0ms;
-  }
-  
-  .bg-img {
+}
+
+/* Slide image */
+
+.bg-img {
     width: 100%;
     height: 100%;
     display: block;
     transition: opacity 0.5s;
-  }
-  
-  .text {
+}
+
+/* slide text */
+
+.text {
     position: absolute;
     bottom: 25%;
     left: 10%;
@@ -43,9 +51,11 @@
     width: 70%;
     font-weight: 500;
     color: var(--white-clr);
-  }
-  
-  .menu {
+}
+
+/* Menu */
+
+.menu {
     position: absolute;
     right: 5%;
     top: 30%;
@@ -55,26 +65,26 @@
     justify-content: start;
     z-index: 1;
     width: 10%;
-  }
-  
-  .menuBar {
+}
+
+.menuBar {
     width: 70%;
     margin: 8%;
     padding: 15% 0 15% 0;
     transition: width 0.5s;
-  }
-  
-  .menuBar:hover {
+}
+
+.menuBar:hover {
     width: 100%;
     cursor: pointer;
-  }
-  
-  .extended {
+}
+
+.extended {
     width: 100%;
-  }
-  
-  .menuItem {
+}
+
+.menuItem {
     background-color: var(--white-clr);
     height: 3px;
     width: 100%;
-  }
+}

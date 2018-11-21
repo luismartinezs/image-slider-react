@@ -1,5 +1,31 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Slider notes:
+
+- Once you've imported the modules required to make React work (see instructions below) copy the "components" folder and its contents in your src folder. It contains everything you need to add the slider to your project.
+    - I assume you have a working React app. In any case, you need to use the react modules: https://reactjs.org/docs/create-a-new-react-app.html
+    - Import Slider, adding 'import Slider from './components/slider';' to your App.js
+    - Add Slider component, wrapped in a div with App class:
+    ```
+    <div className="App">
+        <Slider />
+    </div>
+    ```
+    - Define a width and height css properties for a css class .App, the slider will adapt to the dimensions you define. You can define absolute dimensions or responsive dimensions, the Slider will work either way. Example:
+    ```
+    .App {
+        --width: 768px;
+        width: var(--width);
+        height: -webkit-calc(var(--width) * 9/16);
+        height: -moz-calc(var(--width) * 9/16);
+        height: calc(var(--width) * 9/16);
+    }
+    ```
+    - IMPORTANT: Take care of using images that have the same dimensions to the ones you use for the .app class, the images will be distorted otherwise!
+    - In folder components/assets you'll find a data.js containing an array with data about the images used by the Slider. Just use the urls, alt and text you want.
+        - IMPORTANT: The Slider is designed to work with 5 images (for this, add data for 5 images in the array in data.js). If you use more or less images, everything will break down. The slider could be tweaked without much effort to take on more images, probably. Also, you should take care that the urls are working urls and point to an image.
+    - If you don't like that the slider changes image automatically, comment lines 48 to 53 of slider.js file
+
 ## Available Scripts
 
 In the project directory, you can run:

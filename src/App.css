@@ -1,6 +1,6 @@
 /* The way the Slider works, the containing App should have dimensions equal to the dimensions of the slide image, otherwise the image will appear distorted. App is setup so that its dimensions are always 16:9 and only the width parameter is required. It can be made equal to 100vw for responsiveness */
 .App {
-  --width: 700px;
+  --width: 768px;
   width: var(--width);
   height: -webkit-calc(var(--width) * 9/16);
   height: -moz-calc(var(--width) * 9/16);
