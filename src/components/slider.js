@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Slide from './slide';
 import Menu from './menu';
-import imgArray from '../assets/data';
+import imgArray from './assets/data';
+import './slider.css';
 
 export default class Slider extends Component {
     constructor(props) {
@@ -16,6 +17,8 @@ export default class Slider extends Component {
             ],
         };
         this.handleMenuClick = this.handleMenuClick.bind(this);
+        this.changeSlide = this.changeSlide.bind(this);
+        this.rotateSlide = this.rotateSlide.bind(this);
     }
 
     componentDidMount() {
@@ -44,6 +47,22 @@ export default class Slider extends Component {
                 };
             });
         }
+    }
+
+    changeSlide(index) {
+        let currentImgState = this.state.currentImg;
+
+            this.setState(() => {
+                for (let i=0; i < currentImgState.length; i++) {
+                    currentImgState[i] = 'invisible';
+                    if ( i === +index ) {
+                        currentImgState[i] = 'visible';
+                    }
+                }
+                return {
+                    currentImg: currentImgState,
+                };
+            });
     }
 
     render() {
