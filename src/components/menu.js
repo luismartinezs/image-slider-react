@@ -9,14 +9,12 @@ export default class Menu extends Component {
             if (this.props.currentImg[index] === 'visible') {
                 style += ' extended';
             }
-            return (<div className={style} data-menu data-index={index}>
+            return (<div key={index} className={style} data-menu data-index={index}>
                 <div className='menuItem' data-menu data-index={index}></div>
             </div>);
             });
 
-        console.log(menuItems);
-        // menu needs to have event delegation
-        return (
+            return (
             <div className='menu'>
                 {menuItems}
             </div>

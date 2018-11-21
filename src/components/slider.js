@@ -23,6 +23,7 @@ export default class Slider extends Component {
 
     componentDidMount() {
         document.addEventListener('click', this.handleMenuClick);
+        this.rotateSlide();
     }
 
     componentWillUnmount() {
@@ -33,20 +34,21 @@ export default class Slider extends Component {
         if (event.target.dataset.menu !== undefined) {
 
             let menuIndex = event.target.dataset.index
-            let currentImgState = this.state.currentImg;
-
-            this.setState(() => {
-                for (let i=0; i < currentImgState.length; i++) {
-                    currentImgState[i] = 'invisible';
-                    if ( i === +menuIndex ) {
-                        currentImgState[i] = 'visible';
-                    }
-                }
-                return {
-                    currentImg: currentImgState,
-                };
-            });
+            this.changeSlide(menuIndex);
         }
+    }
+
+    rotateSlide() {
+
+        let _this = this;
+
+        setTimeout( (index) => {
+            index++;
+            if (index > 4) index = 0;
+            _this.changeSlide(index);
+            _this.rotateSlide();
+        }, 5000, _this.state.currentImg.indexOf('visible'));
+        
     }
 
     changeSlide(index) {
