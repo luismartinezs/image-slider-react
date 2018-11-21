@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Check the view: https://luismartinezs.github.io/image-slider-react/
+
 ## Slider notes:
 
 - Once you've imported the modules required to make React work (see instructions below) copy the "components" folder and its contents in your src folder. It contains everything you need to add the slider to your project.
