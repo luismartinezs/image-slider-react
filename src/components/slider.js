@@ -49,7 +49,7 @@ export default class Slider extends Component {
     render() {
         return (
             <div className='slider'>
-                <Menu />
+                <Menu currentImg={this.state.currentImg} />
                 <Slide className={this.state.currentImg[0]} currentImg={imgArray[0]} data-slide-index='0' />
                 <Slide className={this.state.currentImg[1]} currentImg={imgArray[1]} data-slide-index='1' />
                 <Slide className={this.state.currentImg[2]} currentImg={imgArray[2]} data-slide-index='2' />
