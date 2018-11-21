@@ -7,7 +7,13 @@ export default class Slider extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentImg: imgArray[0],
+            currentImg: [
+                'visible',
+                'invisible',
+                'invisible',
+                'invisible',
+                'invisible',
+            ],
         };
         this.handleMenuClick = this.handleMenuClick.bind(this);
     }
@@ -22,19 +28,33 @@ export default class Slider extends Component {
 
     handleMenuClick(event) {
         if (event.target.dataset.menu !== undefined) {
+
             let menuIndex = event.target.dataset.index
-            this.setState({
-                currentImg: imgArray[menuIndex],
-            })
+            let currentImgState = this.state.currentImg;
+
+            this.setState(() => {
+                for (let i=0; i < currentImgState.length; i++) {
+                    currentImgState[i] = 'invisible';
+                    if ( i === +menuIndex ) {
+                        currentImgState[i] = 'visible';
+                    }
+                }
+                return {
+                    currentImg: currentImgState,
+                };
+            });
         }
     }
 
     render() {
-        console.log('current image: '+this.state.currentImg.url);
         return (
             <div className='slider'>
                 <Menu />
-                <Slide currentImg={this.state.currentImg}/>
+                <Slide className={this.state.currentImg[0]} currentImg={imgArray[0]} data-slide-index='0' />
+                <Slide className={this.state.currentImg[1]} currentImg={imgArray[1]} data-slide-index='1' />
+                <Slide className={this.state.currentImg[2]} currentImg={imgArray[2]} data-slide-index='2' />
+                <Slide className={this.state.currentImg[3]} currentImg={imgArray[3]}  data-slide-index='3' />
+                <Slide className={this.state.currentImg[4]} currentImg={imgArray[4]}  data-slide-index='4' />
             </div>
         );
     }

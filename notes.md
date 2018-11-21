@@ -14,6 +14,8 @@ Static
 - if viewport width/height ratio > 16:9, slide should fill full width OK
 - menu should adjust size depending on viewport size OK
 
+- load all images on mount
+
 - function that makes slide fade out (opacity 0.0)
 - function that makes slide fade in (opacity from 0.0 to 1.0)
 

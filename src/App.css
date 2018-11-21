@@ -20,6 +20,18 @@
   height: 100%;
 }
 
+.visible {
+  opacity: 1.0;
+  -webkit-transition: opacity 500ms 300ms;
+  transition: opacity 500ms 300ms;
+}
+
+.invisible {
+  opacity: 0.0;
+  -webkit-transition: opacity 500ms 0ms;
+  transition: opacity 500ms 0ms;
+}
+
 .bg-img {
   max-width: 100%;
   display: block;
@@ -63,8 +75,13 @@
   cursor: pointer;
 }
 
+.extended {
+  width: 60px;
+}
+
 .menuItem {
   background-color: white;
   height: 3px;
   width: 100%;
 }
+

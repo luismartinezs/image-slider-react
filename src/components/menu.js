@@ -6,19 +6,19 @@ export default class Menu extends Component {
         return (
             <div className='menu'>
                 <div className='menuBar' data-menu data-index='0'>
-                    <div className='menuItem'></div>
+                    <div className='menuItem' data-menu data-index='0'></div>
                 </div>
                 <div className='menuBar' data-menu data-index='1'>
-                    <div className='menuItem'></div>
+                    <div className='menuItem' data-menu data-index='1'></div>
                 </div>
                 <div className='menuBar' data-menu data-index='2'>
-                    <div className='menuItem'></div>
+                    <div className='menuItem' data-menu data-index='2'></div>
                 </div>
                 <div className='menuBar' data-menu data-index='3'>
-                    <div className='menuItem'></div>
+                    <div className='menuItem' data-menu data-index='3'></div>
                 </div>
                 <div className='menuBar' data-menu data-index='4'>
-                    <div className='menuItem'></div>
+                    <div className='menuItem' data-menu data-index='4'></div>
                 </div>
             </div>
         );
